@@ -1,4 +1,4 @@
-package com.cibil.crs.utilities;
+package com.akajdev.crypto;
 
 import java.io.ByteArrayInputStream;
 import java.io.InputStream;

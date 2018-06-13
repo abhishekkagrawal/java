@@ -1,4 +1,4 @@
-package com.cibil.crs.utilities;
+package com.akajdev.crypto;
 
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -27,7 +27,7 @@ public class SecurityUtil {
 
     private PrivateKey privateKey;
     private PublicKey publicKey;
-    private static final ResourceBundle RESOURCES = ResourceBundle.getBundle("com.cibil.crs.utilities.properties.resources");
+    private static final ResourceBundle RESOURCES = ResourceBundle.getBundle("com.akajdev.crypto.properties.resources");
     private static final String KEYFACTORY_ALGO = RESOURCES.getString("crypto.keyfactory.algorithm");
     private static final String CIPHER_ALGO = RESOURCES.getString("crypto.cipher.algorithm");
     private static final int keySize = Integer.parseInt(RESOURCES.getString("crypto.keysize"));
