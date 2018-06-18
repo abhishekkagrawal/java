@@ -1,0 +1,2406 @@
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:element name="base">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="responseReport">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="reportIssuesVec" maxOccurs="999" minOccurs="0">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element type="xs:string" name="code" />
+										<xs:element type="xs:string" name="message" />
+										<xs:element type="xs:string" name="description" />
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="reportHeaderRec">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element type="xs:string" name="daysPasswordToExpire" />
+										<xs:element type="xs:string" name="reportOrderNumber" />
+										<xs:element type="xs:string" name="reportOrderDate" />
+										<xs:element type="xs:string" name="reportOrderedBy" />
+										<xs:element type="xs:string" name="memberDetails" />
+										<xs:element type="xs:string" name="applicationReferenceNumber" />
+										<xs:element type="xs:string" name="memberReferenceNumber" />
+										<xs:element type="xs:string" name="inquiryPurpose" />
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="enquiryInformationRec">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element type="xs:string" name="borrowerName" />
+										<xs:element type="xs:string" name="dateOfRegistration" />
+										<xs:element type="xs:string" name="pan" />
+										<xs:element type="xs:string" name="cin" />
+										<xs:element type="xs:string" name="tin" />
+										<xs:element type="xs:string" name="crn" />
+										<xs:element type="xs:string" name="addressCount" />
+										<xs:element name="addressVec">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="address" maxOccurs="3" minOccurs="1">
+														<xs:complexType>
+															<xs:sequence>
+																<xs:element type="xs:string" name="addressLine" />
+																<xs:element type="xs:string" name="city" />
+																<xs:element type="xs:string" name="state" />
+																<xs:element type="xs:string" name="pinCode" />
+															</xs:sequence>
+														</xs:complexType>
+													</xs:element>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="productSec">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="borrowerProfileSec">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="borrwerDetails">
+														<xs:complexType>
+															<xs:sequence>
+																<xs:element type="xs:string" name="name" />
+																<xs:element type="xs:string" name="borrowersLegalConstitution" />
+																<xs:element name="classOfActivityVec">
+																	<xs:complexType>
+																		<xs:sequence>
+																			<xs:element type="xs:string" name="classOfActivity" maxOccurs="3" minOccurs="0" />
+																		</xs:sequence>
+																	</xs:complexType>
+																</xs:element>
+																<xs:element type="xs:string" name="businessCategory" />
+																<xs:element type="xs:string" name="businessIndustryType" />
+																<xs:element type="xs:string" name="salesFigure" />
+																<xs:element type="xs:string" name="numberOfEmployees" />
+																<xs:element type="xs:string" name="dateOfIncorporation" />
+																<xs:element type="xs:string" name="year" />
+															</xs:sequence>
+														</xs:complexType>
+													</xs:element>
+													<xs:element name="borrwerAddressContactDetails">
+														<xs:complexType>
+															<xs:sequence>
+																<xs:element type="xs:string" name="address" />
+																<xs:element type="xs:string" name="telephoneNumber" />
+																<xs:element type="xs:string" name="faxNumber" />
+																<xs:element type="xs:string" name="mobileNumber" />
+															</xs:sequence>
+														</xs:complexType>
+													</xs:element>
+													<xs:element name="borrwerIDDetailsVec">
+														<xs:complexType>
+															<xs:sequence>
+																<xs:element type="xs:string" name="lastReportedDate" />
+																<xs:element name="borrwerIDDetails" maxOccurs="99999" minOccurs="0">
+																	<xs:complexType>
+																		<xs:sequence>
+																			<xs:element type="xs:string" name="cin" />
+																			<xs:element type="xs:string" name="pan" />
+																			<xs:element type="xs:string" name="tin" />
+																			<xs:element type="xs:string" name="registrationNumber" />
+																			<xs:element type="xs:string" name="serviceTaxNumber" />
+																		</xs:sequence>
+																	</xs:complexType>
+																</xs:element>
+															</xs:sequence>
+														</xs:complexType>
+													</xs:element>
+													<xs:element name="borrowerDelinquencyReportedOnBorrower">
+														<xs:complexType>
+															<xs:sequence>
+																<xs:element name="yourInstitution">
+																	<xs:complexType>
+																		<xs:sequence>
+																			<xs:element type="xs:string" name="current" />
+																			<xs:element type="xs:string" name="last24Months" />
+																		</xs:sequence>
+																	</xs:complexType>
+																</xs:element>
+																<xs:element name="outsideInstitution">
+																	<xs:complexType>
+																		<xs:sequence>
+																			<xs:element type="xs:string" name="current" />
+																			<xs:element type="xs:string" name="last24Months" />
+																		</xs:sequence>
+																	</xs:complexType>
+																</xs:element>
+															</xs:sequence>
+														</xs:complexType>
+													</xs:element>
+													<xs:element name="borrowerDelinquencyReportedOnRSOrGSOftheBorrowerIn24MonthsVec">
+														<xs:complexType>
+															<xs:sequence>
+																<xs:element type="xs:string" name="message" />
+																<xs:element name="borrowerDelinquencyReportedOnRSOrGSOftheBorrowerIn24Months" maxOccurs="999"
+																	minOccurs="0">
+																	<xs:complexType>
+																		<xs:sequence>
+																			<xs:element type="xs:string" name="detail" />
+																			<xs:element type="xs:string" name="relationship" />
+																			<xs:element type="xs:string" name="tl_count" />
+																			<xs:element type="xs:string" name="tl_outstanding" />
+																			<xs:element type="xs:string" name="wc_count" />
+																			<xs:element type="xs:string" name="wc_outstanding" />
+																			<xs:element type="xs:string" name="nf_count" />
+																			<xs:element type="xs:string" name="nf_outstanding" />
+																			<xs:element type="xs:string" name="fx_count" />
+																			<xs:element type="xs:string" name="fx_outstanding" />
+																		</xs:sequence>
+																	</xs:complexType>
+																</xs:element>
+															</xs:sequence>
+														</xs:complexType>
+													</xs:element>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+										<xs:element name="rankSec">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element type="xs:string" name="message" />
+													<xs:element name="rankVec" maxOccurs="99" minOccurs="0">
+														<xs:complexType>
+															<xs:sequence>
+																<xs:element type="xs:string" name="rankName" />
+																<xs:element type="xs:string" name="rankValue" />
+																<xs:element type="xs:string" name="exclusionReason" />
+															</xs:sequence>
+														</xs:complexType>
+													</xs:element>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+										<xs:element name="creditProfileSummarySec">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="yourInstitution">
+														<xs:complexType>
+															<xs:sequence>
+																<xs:element type="xs:string" name="message" />
+																<xs:element type="xs:string" name="totalLenders" />
+																<xs:element name="totalCF">
+																	<xs:complexType>
+																		<xs:sequence>
+																			<xs:element type="xs:string" name="borrower" />
+																			<xs:element type="xs:string" name="borrowerPercentage" />
+																			<xs:element type="xs:string" name="guarantor" />
+																			<xs:element type="xs:string" name="guarantorPercentage" />
+																		</xs:sequence>
+																	</xs:complexType>
+																</xs:element>
+																<xs:element type="xs:string" name="openCF" />
+																<xs:element name="totalOutstanding">
+																	<xs:complexType>
+																		<xs:sequence>
+																			<xs:element type="xs:string" name="borrower" />
+																			<xs:element type="xs:string" name="borrowerPercentage" />
+																			<xs:element type="xs:string" name="guarantor" />
+																			<xs:element type="xs:string" name="guarantorPercentage" />
+																		</xs:sequence>
+																	</xs:complexType>
+																</xs:element>
+																<xs:element type="xs:string" name="latestCFOpenedDate" />
+																<xs:element name="delinquentCF">
+																	<xs:complexType>
+																		<xs:sequence>
+																			<xs:element type="xs:string" name="borrower" />
+																			<xs:element type="xs:string" name="borrowerPercentage" />
+																			<xs:element type="xs:string" name="guarantor" />
+																			<xs:element type="xs:string" name="guarantorPercentage" />
+																		</xs:sequence>
+																	</xs:complexType>
+																</xs:element>
+																<xs:element name="delinquentOutstanding">
+																	<xs:complexType>
+																		<xs:sequence>
+																			<xs:element type="xs:string" name="borrower" />
+																			<xs:element type="xs:string" name="borrowerPercentage" />
+																			<xs:element type="xs:string" name="guarantor" />
+																			<xs:element type="xs:string" name="guarantorPercentage" />
+																		</xs:sequence>
+																	</xs:complexType>
+																</xs:element>
+															</xs:sequence>
+														</xs:complexType>
+													</xs:element>
+													<xs:element name="outsideInstitution">
+														<xs:complexType>
+															<xs:sequence>
+																<xs:element type="xs:string" name="message" />
+																<xs:element name="otherPublicSectorBanks">
+																	<xs:complexType>
+																		<xs:sequence>
+																			<xs:element type="xs:string" name="message" />
+																			<xs:element type="xs:string" name="totalLenders" />
+																			<xs:element name="totalCF">
+																				<xs:complexType>
+																					<xs:sequence>
+																						<xs:element type="xs:string" name="borrower" />
+																						<xs:element type="xs:string" name="borrowerPercentage" />
+																						<xs:element type="xs:string" name="guarantor" />
+																						<xs:element type="xs:string" name="guarantorPercentage" />
+																					</xs:sequence>
+																				</xs:complexType>
+																			</xs:element>
+																			<xs:element type="xs:string" name="openCF" />
+																			<xs:element name="totalOutstanding">
+																				<xs:complexType>
+																					<xs:sequence>
+																						<xs:element type="xs:string" name="borrower" />
+																						<xs:element type="xs:string" name="borrowerPercentage" />
+																						<xs:element type="xs:string" name="guarantor" />
+																						<xs:element type="xs:string" name="guarantorPercentage" />
+																					</xs:sequence>
+																				</xs:complexType>
+																			</xs:element>
+																			<xs:element type="xs:string" name="latestCFOpenedDate" />
+																			<xs:element name="delinquentCF">
+																				<xs:complexType>
+																					<xs:sequence>
+																						<xs:element type="xs:string" name="borrower" />
+																						<xs:element type="xs:string" name="borrowerPercentage" />
+																						<xs:element type="xs:string" name="guarantor" />
+																						<xs:element type="xs:string" name="guarantorPercentage" />
+																					</xs:sequence>
+																				</xs:complexType>
+																			</xs:element>
+																			<xs:element name="delinquentOutstanding">
+																				<xs:complexType>
+																					<xs:sequence>
+																						<xs:element type="xs:string" name="borrower" />
+																						<xs:element type="xs:string" name="borrowerPercentage" />
+																						<xs:element type="xs:string" name="guarantor" />
+																						<xs:element type="xs:string" name="guarantorPercentage" />
+																					</xs:sequence>
+																				</xs:complexType>
+																			</xs:element>
+																		</xs:sequence>
+																	</xs:complexType>
+																</xs:element>
+																<xs:element name="otherPrivateForeignBanks">
+																	<xs:complexType>
+																		<xs:sequence>
+																			<xs:element type="xs:string" name="message" />
+																			<xs:element type="xs:string" name="totalLenders" />
+																			<xs:element name="totalCF">
+																				<xs:complexType>
+																					<xs:sequence>
+																						<xs:element type="xs:string" name="borrower" />
+																						<xs:element type="xs:string" name="borrowerPercentage" />
+																						<xs:element type="xs:string" name="guarantor" />
+																						<xs:element type="xs:string" name="guarantorPercentage" />
+																					</xs:sequence>
+																				</xs:complexType>
+																			</xs:element>
+																			<xs:element type="xs:string" name="openCF" />
+																			<xs:element name="totalOutstanding">
+																				<xs:complexType>
+																					<xs:sequence>
+																						<xs:element type="xs:string" name="borrower" />
+																						<xs:element type="xs:string" name="borrowerPercentage" />
+																						<xs:element type="xs:string" name="guarantor" />
+																						<xs:element type="xs:string" name="guarantorPercentage" />
+																					</xs:sequence>
+																				</xs:complexType>
+																			</xs:element>
+																			<xs:element type="xs:string" name="latestCFOpenedDate" />
+																			<xs:element name="delinquentCF">
+																				<xs:complexType>
+																					<xs:sequence>
+																						<xs:element type="xs:string" name="borrower" />
+																						<xs:element type="xs:string" name="borrowerPercentage" />
+																						<xs:element type="xs:string" name="guarantor" />
+																						<xs:element type="xs:string" name="guarantorPercentage" />
+																					</xs:sequence>
+																				</xs:complexType>
+																			</xs:element>
+																			<xs:element name="delinquentOutstanding">
+																				<xs:complexType>
+																					<xs:sequence>
+																						<xs:element type="xs:string" name="borrower" />
+																						<xs:element type="xs:string" name="borrowerPercentage" />
+																						<xs:element type="xs:string" name="guarantor" />
+																						<xs:element type="xs:string" name="guarantorPercentage" />
+																					</xs:sequence>
+																				</xs:complexType>
+																			</xs:element>
+																		</xs:sequence>
+																	</xs:complexType>
+																</xs:element>
+																<xs:element name="NBFC_Others">
+																	<xs:complexType>
+																		<xs:sequence>
+																			<xs:element type="xs:string" name="message" />
+																			<xs:element type="xs:string" name="totalLenders" />
+																			<xs:element name="totalCF">
+																				<xs:complexType>
+																					<xs:sequence>
+																						<xs:element type="xs:string" name="borrower" />
+																						<xs:element type="xs:string" name="borrowerPercentage" />
+																						<xs:element type="xs:string" name="guarantor" />
+																						<xs:element type="xs:string" name="guarantorPercentage" />
+																					</xs:sequence>
+																				</xs:complexType>
+																			</xs:element>
+																			<xs:element type="xs:string" name="openCF" />
+																			<xs:element name="totalOutstanding">
+																				<xs:complexType>
+																					<xs:sequence>
+																						<xs:element type="xs:string" name="borrower" />
+																						<xs:element type="xs:string" name="borrowerPercentage" />
+																						<xs:element type="xs:string" name="guarantor" />
+																						<xs:element type="xs:string" name="guarantorPercentage" />
+																					</xs:sequence>
+																				</xs:complexType>
+																			</xs:element>
+																			<xs:element type="xs:string" name="latestCFOpenedDate" />
+																			<xs:element name="delinquentCF">
+																				<xs:complexType>
+																					<xs:sequence>
+																						<xs:element type="xs:string" name="borrower" />
+																						<xs:element type="xs:string" name="borrowerPercentage" />
+																						<xs:element type="xs:string" name="guarantor" />
+																						<xs:element type="xs:string" name="guarantorPercentage" />
+																					</xs:sequence>
+																				</xs:complexType>
+																			</xs:element>
+																			<xs:element name="delinquentOutstanding">
+																				<xs:complexType>
+																					<xs:sequence>
+																						<xs:element type="xs:string" name="borrower" />
+																						<xs:element type="xs:string" name="borrowerPercentage" />
+																						<xs:element type="xs:string" name="guarantor" />
+																						<xs:element type="xs:string" name="guarantorPercentage" />
+																					</xs:sequence>
+																				</xs:complexType>
+																			</xs:element>
+																		</xs:sequence>
+																	</xs:complexType>
+																</xs:element>
+																<xs:element name="OutsideTotal">
+																	<xs:complexType>
+																		<xs:sequence>
+																			<xs:element type="xs:string" name="message" />
+																			<xs:element type="xs:string" name="totalLenders" />
+																			<xs:element name="totalCF">
+																				<xs:complexType>
+																					<xs:sequence>
+																						<xs:element type="xs:string" name="borrower" />
+																						<xs:element type="xs:string" name="borrowerPercentage" />
+																						<xs:element type="xs:string" name="guarantor" />
+																						<xs:element type="xs:string" name="guarantorPercentage" />
+																					</xs:sequence>
+																				</xs:complexType>
+																			</xs:element>
+																			<xs:element type="xs:string" name="openCF" />
+																			<xs:element name="totalOutstanding">
+																				<xs:complexType>
+																					<xs:sequence>
+																						<xs:element type="xs:string" name="borrower" />
+																						<xs:element type="xs:string" name="borrowerPercentage" />
+																						<xs:element type="xs:string" name="guarantor" />
+																						<xs:element type="xs:string" name="guarantorPercentage" />
+																					</xs:sequence>
+																				</xs:complexType>
+																			</xs:element>
+																			<xs:element type="xs:string" name="latestCFOpenedDate" />
+																			<xs:element name="delinquentCF">
+																				<xs:complexType>
+																					<xs:sequence>
+																						<xs:element type="xs:string" name="borrower" />
+																						<xs:element type="xs:string" name="borrowerPercentage" />
+																						<xs:element type="xs:string" name="guarantor" />
+																						<xs:element type="xs:string" name="guarantorPercentage" />
+																					</xs:sequence>
+																				</xs:complexType>
+																			</xs:element>
+																			<xs:element name="delinquentOutstanding">
+																				<xs:complexType>
+																					<xs:sequence>
+																						<xs:element type="xs:string" name="borrower" />
+																						<xs:element type="xs:string" name="borrowerPercentage" />
+																						<xs:element type="xs:string" name="guarantor" />
+																						<xs:element type="xs:string" name="guarantorPercentage" />
+																					</xs:sequence>
+																				</xs:complexType>
+																			</xs:element>
+																		</xs:sequence>
+																	</xs:complexType>
+																</xs:element>
+															</xs:sequence>
+														</xs:complexType>
+													</xs:element>
+													<xs:element name="total">
+														<xs:complexType>
+															<xs:sequence>
+																<xs:element type="xs:string" name="totalLenders" />
+																<xs:element type="xs:string" name="totalCF" />
+																<xs:element type="xs:string" name="openCF" />
+																<xs:element type="xs:string" name="totalOutstanding" />
+																<xs:element type="xs:string" name="latestCFOpenedDate" />
+																<xs:element type="xs:string" name="delinquentCF" />
+																<xs:element type="xs:string" name="delinquentOutstanding" />
+															</xs:sequence>
+														</xs:complexType>
+													</xs:element>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+										<xs:element name="enquirySummarySec">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element type="xs:string" name="message" />
+													<xs:element name="enquiryYourInstitution">
+														<xs:complexType>
+															<xs:sequence>
+																<xs:element name="noOfEnquiries">
+																	<xs:complexType>
+																		<xs:sequence>
+																			<xs:element type="xs:string" name="month1" />
+																			<xs:element type="xs:string" name="month2to3" />
+																			<xs:element type="xs:string" name="month4to6" />
+																			<xs:element type="xs:string" name="month7to12" />
+																			<xs:element type="xs:string" name="month12to24" />
+																			<xs:element type="xs:string" name="greaterthan24Month" />
+																			<xs:element type="xs:string" name="total" />
+																			<xs:element type="xs:string" name="mostRecentDate" />
+																		</xs:sequence>
+																	</xs:complexType>
+																</xs:element>
+															</xs:sequence>
+														</xs:complexType>
+													</xs:element>
+													<xs:element name="enquiryOutsideInstitution">
+														<xs:complexType>
+															<xs:sequence>
+																<xs:element name="noOfEnquiries">
+																	<xs:complexType>
+																		<xs:sequence>
+																			<xs:element type="xs:string" name="month1" />
+																			<xs:element type="xs:string" name="month2to3" />
+																			<xs:element type="xs:string" name="month4to6" />
+																			<xs:element type="xs:string" name="month7to12" />
+																			<xs:element type="xs:string" name="month12to24" />
+																			<xs:element type="xs:string" name="greaterthan24Month" />
+																			<xs:element type="xs:string" name="total" />
+																			<xs:element type="xs:string" name="mostRecentDate" />
+																		</xs:sequence>
+																	</xs:complexType>
+																</xs:element>
+															</xs:sequence>
+														</xs:complexType>
+													</xs:element>
+													<xs:element name="enquiryTotal">
+														<xs:complexType>
+															<xs:sequence>
+																<xs:element name="noOfEnquiries">
+																	<xs:complexType>
+																		<xs:sequence>
+																			<xs:element type="xs:string" name="month1" />
+																			<xs:element type="xs:string" name="month2to3" />
+																			<xs:element type="xs:string" name="month4to6" />
+																			<xs:element type="xs:string" name="month7to12" />
+																			<xs:element type="xs:string" name="month12to24" />
+																			<xs:element type="xs:string" name="greaterthan24Month" />
+																			<xs:element type="xs:string" name="total" />
+																			<xs:element type="xs:string" name="mostRecentDate" />
+																		</xs:sequence>
+																	</xs:complexType>
+																</xs:element>
+															</xs:sequence>
+														</xs:complexType>
+													</xs:element>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+										<xs:element name="derogatoryInformationSec">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element type="xs:string" name="message" />
+													<xs:element type="xs:string" name="messageOfBorrower" />
+													<xs:element type="xs:string" name="messageOfBorrowerYourInstitution" />
+													<xs:element type="xs:string" name="messageOfBorrowerOutsideInstitution" />
+													<xs:element type="xs:string" name="messageOfRelatedParties" />
+													<xs:element type="xs:string" name="messageOfRelatedPartiesYourInstitution" />
+													<xs:element type="xs:string" name="messageOfRelatedPartiesOutsideInstitution" />
+													<xs:element type="xs:string" name="messageOfGuarantedParties" />
+													<xs:element name="derogatoryInformationBorrower">
+														<xs:complexType>
+															<xs:sequence>
+																<xs:element name="yourInstitution">
+																	<xs:complexType>
+																		<xs:sequence>
+																			<xs:element type="xs:string" name="wilfulDefault" />
+																			<xs:element name="suitFilled">
+																				<xs:complexType>
+																					<xs:sequence>
+																						<xs:element type="xs:string" name="numberOfSuitFiled" />
+																						<xs:element type="xs:string" name="amt" />
+																					</xs:sequence>
+																				</xs:complexType>
+																			</xs:element>
+																			<xs:element name="writtenOff">
+																				<xs:complexType>
+																					<xs:sequence>
+																						<xs:element type="xs:string" name="numberOfSuitFiled" />
+																						<xs:element type="xs:string" name="amt" />
+																					</xs:sequence>
+																				</xs:complexType>
+																			</xs:element>
+																			<xs:element name="settled">
+																				<xs:complexType>
+																					<xs:sequence>
+																						<xs:element type="xs:string" name="numberOfSuitFiled" />
+																						<xs:element type="xs:string" name="amt" />
+																					</xs:sequence>
+																				</xs:complexType>
+																			</xs:element>
+																			<xs:element name="invoked">
+																				<xs:complexType>
+																					<xs:sequence>
+																						<xs:element type="xs:string" name="numberOfSuitFiled" />
+																						<xs:element type="xs:string" name="amt" />
+																					</xs:sequence>
+																				</xs:complexType>
+																			</xs:element>
+																			<xs:element name="overdueCF">
+																				<xs:complexType>
+																					<xs:sequence>
+																						<xs:element type="xs:string" name="numberOfSuitFiled" />
+																						<xs:element type="xs:string" name="amt" />
+																					</xs:sequence>
+																				</xs:complexType>
+																			</xs:element>
+																			<xs:element type="xs:string" name="dishonoredCheque" />
+																		</xs:sequence>
+																	</xs:complexType>
+																</xs:element>
+																<xs:element name="outsideInstitution">
+																	<xs:complexType>
+																		<xs:sequence>
+																			<xs:element type="xs:string" name="wilfulDefault" />
+																			<xs:element name="suitFilled">
+																				<xs:complexType>
+																					<xs:sequence>
+																						<xs:element type="xs:string" name="numberOfSuitFiled" />
+																						<xs:element type="xs:string" name="amt" />
+																					</xs:sequence>
+																				</xs:complexType>
+																			</xs:element>
+																			<xs:element name="writtenOff">
+																				<xs:complexType>
+																					<xs:sequence>
+																						<xs:element type="xs:string" name="numberOfSuitFiled" />
+																						<xs:element type="xs:string" name="amt" />
+																					</xs:sequence>
+																				</xs:complexType>
+																			</xs:element>
+																			<xs:element name="settled">
+																				<xs:complexType>
+																					<xs:sequence>
+																						<xs:element type="xs:string" name="numberOfSuitFiled" />
+																						<xs:element type="xs:string" name="amt" />
+																					</xs:sequence>
+																				</xs:complexType>
+																			</xs:element>
+																			<xs:element name="invoked">
+																				<xs:complexType>
+																					<xs:sequence>
+																						<xs:element type="xs:string" name="numberOfSuitFiled" />
+																						<xs:element type="xs:string" name="amt" />
+																					</xs:sequence>
+																				</xs:complexType>
+																			</xs:element>
+																			<xs:element name="overdueCF">
+																				<xs:complexType>
+																					<xs:sequence>
+																						<xs:element type="xs:string" name="numberOfSuitFiled" />
+																						<xs:element type="xs:string" name="amt" />
+																					</xs:sequence>
+																				</xs:complexType>
+																			</xs:element>
+																			<xs:element type="xs:string" name="dishonoredCheque" />
+																		</xs:sequence>
+																	</xs:complexType>
+																</xs:element>
+																<xs:element name="total">
+																	<xs:complexType>
+																		<xs:sequence>
+																			<xs:element type="xs:string" name="wilfulDefault" />
+																			<xs:element name="suitFilled">
+																				<xs:complexType>
+																					<xs:sequence>
+																						<xs:element type="xs:string" name="numberOfSuitFiled" />
+																						<xs:element type="xs:string" name="amt" />
+																					</xs:sequence>
+																				</xs:complexType>
+																			</xs:element>
+																			<xs:element name="writtenOff">
+																				<xs:complexType>
+																					<xs:sequence>
+																						<xs:element type="xs:string" name="numberOfSuitFiled" />
+																						<xs:element type="xs:string" name="amt" />
+																					</xs:sequence>
+																				</xs:complexType>
+																			</xs:element>
+																			<xs:element name="settled">
+																				<xs:complexType>
+																					<xs:sequence>
+																						<xs:element type="xs:string" name="numberOfSuitFiled" />
+																						<xs:element type="xs:string" name="amt" />
+																					</xs:sequence>
+																				</xs:complexType>
+																			</xs:element>
+																			<xs:element name="invoked">
+																				<xs:complexType>
+																					<xs:sequence>
+																						<xs:element type="xs:string" name="numberOfSuitFiled" />
+																						<xs:element type="xs:string" name="amt" />
+																					</xs:sequence>
+																				</xs:complexType>
+																			</xs:element>
+																			<xs:element name="overdueCF">
+																				<xs:complexType>
+																					<xs:sequence>
+																						<xs:element type="xs:string" name="numberOfSuitFiled" />
+																						<xs:element type="xs:string" name="amt" />
+																					</xs:sequence>
+																				</xs:complexType>
+																			</xs:element>
+																			<xs:element type="xs:string" name="dishonoredCheque" />
+																		</xs:sequence>
+																	</xs:complexType>
+																</xs:element>
+															</xs:sequence>
+														</xs:complexType>
+													</xs:element>
+													<xs:element name="derogatoryInformationOnRelatedPartiesOrGuarantorsOfBorrowerSec">
+														<xs:complexType>
+															<xs:sequence>
+																<xs:element name="yourInstitution">
+																	<xs:complexType>
+																		<xs:sequence>
+																			<xs:element type="xs:string" name="wilfulDefault" />
+																			<xs:element name="suitFilled">
+																				<xs:complexType>
+																					<xs:sequence>
+																						<xs:element type="xs:string" name="numberOfSuitFiled" />
+																						<xs:element type="xs:string" name="amt" />
+																					</xs:sequence>
+																				</xs:complexType>
+																			</xs:element>
+																			<xs:element name="writtenOff">
+																				<xs:complexType>
+																					<xs:sequence>
+																						<xs:element type="xs:string" name="numberOfSuitFiled" />
+																						<xs:element type="xs:string" name="amt" />
+																					</xs:sequence>
+																				</xs:complexType>
+																			</xs:element>
+																			<xs:element name="settled">
+																				<xs:complexType>
+																					<xs:sequence>
+																						<xs:element type="xs:string" name="numberOfSuitFiled" />
+																						<xs:element type="xs:string" name="amt" />
+																					</xs:sequence>
+																				</xs:complexType>
+																			</xs:element>
+																			<xs:element name="invoked">
+																				<xs:complexType>
+																					<xs:sequence>
+																						<xs:element type="xs:string" name="numberOfSuitFiled" />
+																						<xs:element type="xs:string" name="amt" />
+																					</xs:sequence>
+																				</xs:complexType>
+																			</xs:element>
+																			<xs:element name="overdueCF">
+																				<xs:complexType>
+																					<xs:sequence>
+																						<xs:element type="xs:string" name="numberOfSuitFiled" />
+																						<xs:element type="xs:string" name="amt" />
+																					</xs:sequence>
+																				</xs:complexType>
+																			</xs:element>
+																			<xs:element type="xs:string" name="dishonoredCheque" />
+																		</xs:sequence>
+																	</xs:complexType>
+																</xs:element>
+																<xs:element name="outsideInstitution">
+																	<xs:complexType>
+																		<xs:sequence>
+																			<xs:element type="xs:string" name="wilfulDefault" />
+																			<xs:element name="suitFilled">
+																				<xs:complexType>
+																					<xs:sequence>
+																						<xs:element type="xs:string" name="numberOfSuitFiled" />
+																						<xs:element type="xs:string" name="amt" />
+																					</xs:sequence>
+																				</xs:complexType>
+																			</xs:element>
+																			<xs:element name="writtenOff">
+																				<xs:complexType>
+																					<xs:sequence>
+																						<xs:element type="xs:string" name="numberOfSuitFiled" />
+																						<xs:element type="xs:string" name="amt" />
+																					</xs:sequence>
+																				</xs:complexType>
+																			</xs:element>
+																			<xs:element name="settled">
+																				<xs:complexType>
+																					<xs:sequence>
+																						<xs:element type="xs:string" name="numberOfSuitFiled" />
+																						<xs:element type="xs:string" name="amt" />
+																					</xs:sequence>
+																				</xs:complexType>
+																			</xs:element>
+																			<xs:element name="invoked">
+																				<xs:complexType>
+																					<xs:sequence>
+																						<xs:element type="xs:string" name="numberOfSuitFiled" />
+																						<xs:element type="xs:string" name="amt" />
+																					</xs:sequence>
+																				</xs:complexType>
+																			</xs:element>
+																			<xs:element name="overdueCF">
+																				<xs:complexType>
+																					<xs:sequence>
+																						<xs:element type="xs:string" name="numberOfSuitFiled" />
+																						<xs:element type="xs:string" name="amt" />
+																					</xs:sequence>
+																				</xs:complexType>
+																			</xs:element>
+																			<xs:element type="xs:string" name="dishonoredCheque" />
+																		</xs:sequence>
+																	</xs:complexType>
+																</xs:element>
+																<xs:element name="total">
+																	<xs:complexType>
+																		<xs:sequence>
+																			<xs:element type="xs:string" name="wilfulDefault" />
+																			<xs:element name="suitFilled">
+																				<xs:complexType>
+																					<xs:sequence>
+																						<xs:element type="xs:string" name="numberOfSuitFiled" />
+																						<xs:element type="xs:string" name="amt" />
+																					</xs:sequence>
+																				</xs:complexType>
+																			</xs:element>
+																			<xs:element name="writtenOff">
+																				<xs:complexType>
+																					<xs:sequence>
+																						<xs:element type="xs:string" name="numberOfSuitFiled" />
+																						<xs:element type="xs:string" name="amt" />
+																					</xs:sequence>
+																				</xs:complexType>
+																			</xs:element>
+																			<xs:element name="settled">
+																				<xs:complexType>
+																					<xs:sequence>
+																						<xs:element type="xs:string" name="numberOfSuitFiled" />
+																						<xs:element type="xs:string" name="amt" />
+																					</xs:sequence>
+																				</xs:complexType>
+																			</xs:element>
+																			<xs:element name="invoked">
+																				<xs:complexType>
+																					<xs:sequence>
+																						<xs:element type="xs:string" name="numberOfSuitFiled" />
+																						<xs:element type="xs:string" name="amt" />
+																					</xs:sequence>
+																				</xs:complexType>
+																			</xs:element>
+																			<xs:element name="overdueCF">
+																				<xs:complexType>
+																					<xs:sequence>
+																						<xs:element type="xs:string" name="numberOfSuitFiled" />
+																						<xs:element type="xs:string" name="amt" />
+																					</xs:sequence>
+																				</xs:complexType>
+																			</xs:element>
+																			<xs:element type="xs:string" name="dishonoredCheque" />
+																		</xs:sequence>
+																	</xs:complexType>
+																</xs:element>
+															</xs:sequence>
+														</xs:complexType>
+													</xs:element>
+													<xs:element name="derogatoryInformationReportedOnGuarantedPartiesVec">
+														<xs:complexType>
+															<xs:sequence>
+																<xs:element type="xs:string" name="derogatoryInformationReportedOnGuarantedParties"
+																	maxOccurs="99999" minOccurs="0" />
+															</xs:sequence>
+														</xs:complexType>
+													</xs:element>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+										<xs:element name="oustandingBalanceByCFAndAssetClasificationSec">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element type="xs:string" name="message" />
+													<xs:element name="yourInstitution">
+														<xs:complexType>
+															<xs:sequence>
+																<xs:element name="nonFunded">
+																	<xs:complexType>
+																		<xs:sequence>
+																			<xs:element name="STDVec">
+																				<xs:complexType>
+																					<xs:sequence>
+																						<xs:element name="DPD0">
+																							<xs:complexType>
+																								<xs:sequence>
+																									<xs:element type="xs:string" name="count" />
+																									<xs:element type="xs:string" name="value" />
+																								</xs:sequence>
+																							</xs:complexType>
+																						</xs:element>
+																						<xs:element name="DPD1to30">
+																							<xs:complexType>
+																								<xs:sequence>
+																									<xs:element type="xs:string" name="count" />
+																									<xs:element type="xs:string" name="value" />
+																								</xs:sequence>
+																							</xs:complexType>
+																						</xs:element>
+																						<xs:element name="DPD31to60">
+																							<xs:complexType>
+																								<xs:sequence>
+																									<xs:element type="xs:string" name="count" />
+																									<xs:element type="xs:string" name="value" />
+																								</xs:sequence>
+																							</xs:complexType>
+																						</xs:element>
+																						<xs:element name="DPD61to90">
+																							<xs:complexType>
+																								<xs:sequence>
+																									<xs:element type="xs:string" name="count" />
+																									<xs:element type="xs:string" name="value" />
+																								</xs:sequence>
+																							</xs:complexType>
+																						</xs:element>
+																					</xs:sequence>
+																				</xs:complexType>
+																			</xs:element>
+																			<xs:element name="NONSTDVec">
+																				<xs:complexType>
+																					<xs:sequence>
+																						<xs:element name="DPD91to180">
+																							<xs:complexType>
+																								<xs:sequence>
+																									<xs:element type="xs:string" name="count" />
+																									<xs:element type="xs:string" name="value" />
+																								</xs:sequence>
+																							</xs:complexType>
+																						</xs:element>
+																						<xs:element name="greaterThan180DPD">
+																							<xs:complexType>
+																								<xs:sequence>
+																									<xs:element type="xs:string" name="count" />
+																									<xs:element type="xs:string" name="value" />
+																								</xs:sequence>
+																							</xs:complexType>
+																						</xs:element>
+																						<xs:element name="sub">
+																							<xs:complexType>
+																								<xs:sequence>
+																									<xs:element type="xs:string" name="count" />
+																									<xs:element type="xs:string" name="value" />
+																								</xs:sequence>
+																							</xs:complexType>
+																						</xs:element>
+																						<xs:element name="dbt">
+																							<xs:complexType>
+																								<xs:sequence>
+																									<xs:element type="xs:string" name="count" />
+																									<xs:element type="xs:string" name="value" />
+																								</xs:sequence>
+																							</xs:complexType>
+																						</xs:element>
+																						<xs:element name="loss">
+																							<xs:complexType>
+																								<xs:sequence>
+																									<xs:element type="xs:string" name="count" />
+																									<xs:element type="xs:string" name="value" />
+																								</xs:sequence>
+																							</xs:complexType>
+																						</xs:element>
+																					</xs:sequence>
+																				</xs:complexType>
+																			</xs:element>
+																			<xs:element name="total">
+																				<xs:complexType>
+																					<xs:sequence>
+																						<xs:element type="xs:string" name="count" />
+																						<xs:element type="xs:string" name="value" />
+																					</xs:sequence>
+																				</xs:complexType>
+																			</xs:element>
+																		</xs:sequence>
+																	</xs:complexType>
+																</xs:element>
+																<xs:element name="workingCapital">
+																	<xs:complexType>
+																		<xs:sequence>
+																			<xs:element name="STDVec">
+																				<xs:complexType>
+																					<xs:sequence>
+																						<xs:element name="DPD0">
+																							<xs:complexType>
+																								<xs:sequence>
+																									<xs:element type="xs:string" name="count" />
+																									<xs:element type="xs:string" name="value" />
+																								</xs:sequence>
+																							</xs:complexType>
+																						</xs:element>
+																						<xs:element name="DPD1to30">
+																							<xs:complexType>
+																								<xs:sequence>
+																									<xs:element type="xs:string" name="count" />
+																									<xs:element type="xs:string" name="value" />
+																								</xs:sequence>
+																							</xs:complexType>
+																						</xs:element>
+																						<xs:element name="DPD31to60">
+																							<xs:complexType>
+																								<xs:sequence>
+																									<xs:element type="xs:string" name="count" />
+																									<xs:element type="xs:string" name="value" />
+																								</xs:sequence>
+																							</xs:complexType>
+																						</xs:element>
+																						<xs:element name="DPD61to90">
+																							<xs:complexType>
+																								<xs:sequence>
+																									<xs:element type="xs:string" name="count" />
+																									<xs:element type="xs:string" name="value" />
+																								</xs:sequence>
+																							</xs:complexType>
+																						</xs:element>
+																					</xs:sequence>
+																				</xs:complexType>
+																			</xs:element>
+																			<xs:element name="NONSTDVec">
+																				<xs:complexType>
+																					<xs:sequence>
+																						<xs:element name="DPD91to180">
+																							<xs:complexType>
+																								<xs:sequence>
+																									<xs:element type="xs:string" name="count" />
+																									<xs:element type="xs:string" name="value" />
+																								</xs:sequence>
+																							</xs:complexType>
+																						</xs:element>
+																						<xs:element name="greaterThan180DPD">
+																							<xs:complexType>
+																								<xs:sequence>
+																									<xs:element type="xs:string" name="count" />
+																									<xs:element type="xs:string" name="value" />
+																								</xs:sequence>
+																							</xs:complexType>
+																						</xs:element>
+																						<xs:element name="sub">
+																							<xs:complexType>
+																								<xs:sequence>
+																									<xs:element type="xs:string" name="count" />
+																									<xs:element type="xs:string" name="value" />
+																								</xs:sequence>
+																							</xs:complexType>
+																						</xs:element>
+																						<xs:element name="dbt">
+																							<xs:complexType>
+																								<xs:sequence>
+																									<xs:element type="xs:string" name="count" />
+																									<xs:element type="xs:string" name="value" />
+																								</xs:sequence>
+																							</xs:complexType>
+																						</xs:element>
+																						<xs:element name="loss">
+																							<xs:complexType>
+																								<xs:sequence>
+																									<xs:element type="xs:string" name="count" />
+																									<xs:element type="xs:string" name="value" />
+																								</xs:sequence>
+																							</xs:complexType>
+																						</xs:element>
+																					</xs:sequence>
+																				</xs:complexType>
+																			</xs:element>
+																			<xs:element name="total">
+																				<xs:complexType>
+																					<xs:sequence>
+																						<xs:element type="xs:string" name="count" />
+																						<xs:element type="xs:string" name="value" />
+																					</xs:sequence>
+																				</xs:complexType>
+																			</xs:element>
+																		</xs:sequence>
+																	</xs:complexType>
+																</xs:element>
+																<xs:element name="termLoan">
+																	<xs:complexType>
+																		<xs:sequence>
+																			<xs:element name="STDVec">
+																				<xs:complexType>
+																					<xs:sequence>
+																						<xs:element name="DPD0">
+																							<xs:complexType>
+																								<xs:sequence>
+																									<xs:element type="xs:string" name="count" />
+																									<xs:element type="xs:string" name="value" />
+																								</xs:sequence>
+																							</xs:complexType>
+																						</xs:element>
+																						<xs:element name="DPD1to30">
+																							<xs:complexType>
+																								<xs:sequence>
+																									<xs:element type="xs:string" name="count" />
+																									<xs:element type="xs:string" name="value" />
+																								</xs:sequence>
+																							</xs:complexType>
+																						</xs:element>
+																						<xs:element name="DPD31to60">
+																							<xs:complexType>
+																								<xs:sequence>
+																									<xs:element type="xs:string" name="count" />
+																									<xs:element type="xs:string" name="value" />
+																								</xs:sequence>
+																							</xs:complexType>
+																						</xs:element>
+																						<xs:element name="DPD61to90">
+																							<xs:complexType>
+																								<xs:sequence>
+																									<xs:element type="xs:string" name="count" />
+																									<xs:element type="xs:string" name="value" />
+																								</xs:sequence>
+																							</xs:complexType>
+																						</xs:element>
+																					</xs:sequence>
+																				</xs:complexType>
+																			</xs:element>
+																			<xs:element name="NONSTDVec">
+																				<xs:complexType>
+																					<xs:sequence>
+																						<xs:element name="DPD91to180">
+																							<xs:complexType>
+																								<xs:sequence>
+																									<xs:element type="xs:string" name="count" />
+																									<xs:element type="xs:string" name="value" />
+																								</xs:sequence>
+																							</xs:complexType>
+																						</xs:element>
+																						<xs:element name="greaterThan180DPD">
+																							<xs:complexType>
+																								<xs:sequence>
+																									<xs:element type="xs:string" name="count" />
+																									<xs:element type="xs:string" name="value" />
+																								</xs:sequence>
+																							</xs:complexType>
+																						</xs:element>
+																						<xs:element name="sub">
+																							<xs:complexType>
+																								<xs:sequence>
+																									<xs:element type="xs:string" name="count" />
+																									<xs:element type="xs:string" name="value" />
+																								</xs:sequence>
+																							</xs:complexType>
+																						</xs:element>
+																						<xs:element name="dbt">
+																							<xs:complexType>
+																								<xs:sequence>
+																									<xs:element type="xs:string" name="count" />
+																									<xs:element type="xs:string" name="value" />
+																								</xs:sequence>
+																							</xs:complexType>
+																						</xs:element>
+																						<xs:element name="loss">
+																							<xs:complexType>
+																								<xs:sequence>
+																									<xs:element type="xs:string" name="count" />
+																									<xs:element type="xs:string" name="value" />
+																								</xs:sequence>
+																							</xs:complexType>
+																						</xs:element>
+																					</xs:sequence>
+																				</xs:complexType>
+																			</xs:element>
+																			<xs:element name="total">
+																				<xs:complexType>
+																					<xs:sequence>
+																						<xs:element type="xs:string" name="count" />
+																						<xs:element type="xs:string" name="value" />
+																					</xs:sequence>
+																				</xs:complexType>
+																			</xs:element>
+																		</xs:sequence>
+																	</xs:complexType>
+																</xs:element>
+																<xs:element name="forex">
+																	<xs:complexType>
+																		<xs:sequence>
+																			<xs:element name="STDVec">
+																				<xs:complexType>
+																					<xs:sequence>
+																						<xs:element name="DPD0">
+																							<xs:complexType>
+																								<xs:sequence>
+																									<xs:element type="xs:string" name="count" />
+																									<xs:element type="xs:string" name="value" />
+																								</xs:sequence>
+																							</xs:complexType>
+																						</xs:element>
+																						<xs:element name="DPD1to30">
+																							<xs:complexType>
+																								<xs:sequence>
+																									<xs:element type="xs:string" name="count" />
+																									<xs:element type="xs:string" name="value" />
+																								</xs:sequence>
+																							</xs:complexType>
+																						</xs:element>
+																						<xs:element name="DPD31to60">
+																							<xs:complexType>
+																								<xs:sequence>
+																									<xs:element type="xs:string" name="count" />
+																									<xs:element type="xs:string" name="value" />
+																								</xs:sequence>
+																							</xs:complexType>
+																						</xs:element>
+																						<xs:element name="DPD61to90">
+																							<xs:complexType>
+																								<xs:sequence>
+																									<xs:element type="xs:string" name="count" />
+																									<xs:element type="xs:string" name="value" />
+																								</xs:sequence>
+																							</xs:complexType>
+																						</xs:element>
+																					</xs:sequence>
+																				</xs:complexType>
+																			</xs:element>
+																			<xs:element name="NONSTDVec">
+																				<xs:complexType>
+																					<xs:sequence>
+																						<xs:element name="DPD91to180">
+																							<xs:complexType>
+																								<xs:sequence>
+																									<xs:element type="xs:string" name="count" />
+																									<xs:element type="xs:string" name="value" />
+																								</xs:sequence>
+																							</xs:complexType>
+																						</xs:element>
+																						<xs:element name="greaterThan180DPD">
+																							<xs:complexType>
+																								<xs:sequence>
+																									<xs:element type="xs:string" name="count" />
+																									<xs:element type="xs:string" name="value" />
+																								</xs:sequence>
+																							</xs:complexType>
+																						</xs:element>
+																						<xs:element name="sub">
+																							<xs:complexType>
+																								<xs:sequence>
+																									<xs:element type="xs:string" name="count" />
+																									<xs:element type="xs:string" name="value" />
+																								</xs:sequence>
+																							</xs:complexType>
+																						</xs:element>
+																						<xs:element name="dbt">
+																							<xs:complexType>
+																								<xs:sequence>
+																									<xs:element type="xs:string" name="count" />
+																									<xs:element type="xs:string" name="value" />
+																								</xs:sequence>
+																							</xs:complexType>
+																						</xs:element>
+																						<xs:element name="loss">
+																							<xs:complexType>
+																								<xs:sequence>
+																									<xs:element type="xs:string" name="count" />
+																									<xs:element type="xs:string" name="value" />
+																								</xs:sequence>
+																							</xs:complexType>
+																						</xs:element>
+																					</xs:sequence>
+																				</xs:complexType>
+																			</xs:element>
+																			<xs:element name="total">
+																				<xs:complexType>
+																					<xs:sequence>
+																						<xs:element type="xs:string" name="count" />
+																						<xs:element type="xs:string" name="value" />
+																					</xs:sequence>
+																				</xs:complexType>
+																			</xs:element>
+																		</xs:sequence>
+																	</xs:complexType>
+																</xs:element>
+																<xs:element name="total">
+																	<xs:complexType>
+																		<xs:sequence>
+																			<xs:element name="STDVec">
+																				<xs:complexType>
+																					<xs:sequence>
+																						<xs:element name="DPD0">
+																							<xs:complexType>
+																								<xs:sequence>
+																									<xs:element type="xs:string" name="count" />
+																									<xs:element type="xs:string" name="value" />
+																								</xs:sequence>
+																							</xs:complexType>
+																						</xs:element>
+																						<xs:element name="DPD1to30">
+																							<xs:complexType>
+																								<xs:sequence>
+																									<xs:element type="xs:string" name="count" />
+																									<xs:element type="xs:string" name="value" />
+																								</xs:sequence>
+																							</xs:complexType>
+																						</xs:element>
+																						<xs:element name="DPD31to60">
+																							<xs:complexType>
+																								<xs:sequence>
+																									<xs:element type="xs:string" name="count" />
+																									<xs:element type="xs:string" name="value" />
+																								</xs:sequence>
+																							</xs:complexType>
+																						</xs:element>
+																						<xs:element name="DPD61to90">
+																							<xs:complexType>
+																								<xs:sequence>
+																									<xs:element type="xs:string" name="count" />
+																									<xs:element type="xs:string" name="value" />
+																								</xs:sequence>
+																							</xs:complexType>
+																						</xs:element>
+																					</xs:sequence>
+																				</xs:complexType>
+																			</xs:element>
+																			<xs:element name="NONSTDVec">
+																				<xs:complexType>
+																					<xs:sequence>
+																						<xs:element name="DPD91to180">
+																							<xs:complexType>
+																								<xs:sequence>
+																									<xs:element type="xs:string" name="count" />
+																									<xs:element type="xs:string" name="value" />
+																								</xs:sequence>
+																							</xs:complexType>
+																						</xs:element>
+																						<xs:element name="greaterThan180DPD">
+																							<xs:complexType>
+																								<xs:sequence>
+																									<xs:element type="xs:string" name="count" />
+																									<xs:element type="xs:string" name="value" />
+																								</xs:sequence>
+																							</xs:complexType>
+																						</xs:element>
+																						<xs:element name="sub">
+																							<xs:complexType>
+																								<xs:sequence>
+																									<xs:element type="xs:string" name="count" />
+																									<xs:element type="xs:string" name="value" />
+																								</xs:sequence>
+																							</xs:complexType>
+																						</xs:element>
+																						<xs:element name="dbt">
+																							<xs:complexType>
+																								<xs:sequence>
+																									<xs:element type="xs:string" name="count" />
+																									<xs:element type="xs:string" name="value" />
+																								</xs:sequence>
+																							</xs:complexType>
+																						</xs:element>
+																						<xs:element name="loss">
+																							<xs:complexType>
+																								<xs:sequence>
+																									<xs:element type="xs:string" name="count" />
+																									<xs:element type="xs:string" name="value" />
+																								</xs:sequence>
+																							</xs:complexType>
+																						</xs:element>
+																					</xs:sequence>
+																				</xs:complexType>
+																			</xs:element>
+																			<xs:element name="total">
+																				<xs:complexType>
+																					<xs:sequence>
+																						<xs:element type="xs:string" name="count" />
+																						<xs:element type="xs:string" name="value" />
+																					</xs:sequence>
+																				</xs:complexType>
+																			</xs:element>
+																		</xs:sequence>
+																	</xs:complexType>
+																</xs:element>
+															</xs:sequence>
+														</xs:complexType>
+													</xs:element>
+													<xs:element name="outsideInstitution">
+														<xs:complexType>
+															<xs:sequence>
+																<xs:element name="nonFunded">
+																	<xs:complexType>
+																		<xs:sequence>
+																			<xs:element name="STDVec">
+																				<xs:complexType>
+																					<xs:sequence>
+																						<xs:element name="DPD0">
+																							<xs:complexType>
+																								<xs:sequence>
+																									<xs:element type="xs:string" name="count" />
+																									<xs:element type="xs:string" name="value" />
+																								</xs:sequence>
+																							</xs:complexType>
+																						</xs:element>
+																						<xs:element name="DPD1to30">
+																							<xs:complexType>
+																								<xs:sequence>
+																									<xs:element type="xs:string" name="count" />
+																									<xs:element type="xs:string" name="value" />
+																								</xs:sequence>
+																							</xs:complexType>
+																						</xs:element>
+																						<xs:element name="DPD31to60">
+																							<xs:complexType>
+																								<xs:sequence>
+																									<xs:element type="xs:string" name="count" />
+																									<xs:element type="xs:string" name="value" />
+																								</xs:sequence>
+																							</xs:complexType>
+																						</xs:element>
+																						<xs:element name="DPD61to90">
+																							<xs:complexType>
+																								<xs:sequence>
+																									<xs:element type="xs:string" name="count" />
+																									<xs:element type="xs:string" name="value" />
+																								</xs:sequence>
+																							</xs:complexType>
+																						</xs:element>
+																					</xs:sequence>
+																				</xs:complexType>
+																			</xs:element>
+																			<xs:element name="NONSTDVec">
+																				<xs:complexType>
+																					<xs:sequence>
+																						<xs:element name="DPD91to180">
+																							<xs:complexType>
+																								<xs:sequence>
+																									<xs:element type="xs:string" name="count" />
+																									<xs:element type="xs:string" name="value" />
+																								</xs:sequence>
+																							</xs:complexType>
+																						</xs:element>
+																						<xs:element name="greaterThan180DPD">
+																							<xs:complexType>
+																								<xs:sequence>
+																									<xs:element type="xs:string" name="count" />
+																									<xs:element type="xs:string" name="value" />
+																								</xs:sequence>
+																							</xs:complexType>
+																						</xs:element>
+																						<xs:element name="sub">
+																							<xs:complexType>
+																								<xs:sequence>
+																									<xs:element type="xs:string" name="count" />
+																									<xs:element type="xs:string" name="value" />
+																								</xs:sequence>
+																							</xs:complexType>
+																						</xs:element>
+																						<xs:element name="dbt">
+																							<xs:complexType>
+																								<xs:sequence>
+																									<xs:element type="xs:string" name="count" />
+																									<xs:element type="xs:string" name="value" />
+																								</xs:sequence>
+																							</xs:complexType>
+																						</xs:element>
+																						<xs:element name="loss">
+																							<xs:complexType>
+																								<xs:sequence>
+																									<xs:element type="xs:string" name="count" />
+																									<xs:element type="xs:string" name="value" />
+																								</xs:sequence>
+																							</xs:complexType>
+																						</xs:element>
+																					</xs:sequence>
+																				</xs:complexType>
+																			</xs:element>
+																			<xs:element name="total">
+																				<xs:complexType>
+																					<xs:sequence>
+																						<xs:element type="xs:string" name="count" />
+																						<xs:element type="xs:string" name="value" />
+																					</xs:sequence>
+																				</xs:complexType>
+																			</xs:element>
+																		</xs:sequence>
+																	</xs:complexType>
+																</xs:element>
+																<xs:element name="workingCapital">
+																	<xs:complexType>
+																		<xs:sequence>
+																			<xs:element name="STDVec">
+																				<xs:complexType>
+																					<xs:sequence>
+																						<xs:element name="DPD0">
+																							<xs:complexType>
+																								<xs:sequence>
+																									<xs:element type="xs:string" name="count" />
+																									<xs:element type="xs:string" name="value" />
+																								</xs:sequence>
+																							</xs:complexType>
+																						</xs:element>
+																						<xs:element name="DPD1to30">
+																							<xs:complexType>
+																								<xs:sequence>
+																									<xs:element type="xs:string" name="count" />
+																									<xs:element type="xs:string" name="value" />
+																								</xs:sequence>
+																							</xs:complexType>
+																						</xs:element>
+																						<xs:element name="DPD31to60">
+																							<xs:complexType>
+																								<xs:sequence>
+																									<xs:element type="xs:string" name="count" />
+																									<xs:element type="xs:string" name="value" />
+																								</xs:sequence>
+																							</xs:complexType>
+																						</xs:element>
+																						<xs:element name="DPD61to90">
+																							<xs:complexType>
+																								<xs:sequence>
+																									<xs:element type="xs:string" name="count" />
+																									<xs:element type="xs:string" name="value" />
+																								</xs:sequence>
+																							</xs:complexType>
+																						</xs:element>
+																					</xs:sequence>
+																				</xs:complexType>
+																			</xs:element>
+																			<xs:element name="NONSTDVec">
+																				<xs:complexType>
+																					<xs:sequence>
+																						<xs:element name="DPD91to180">
+																							<xs:complexType>
+																								<xs:sequence>
+																									<xs:element type="xs:string" name="count" />
+																									<xs:element type="xs:string" name="value" />
+																								</xs:sequence>
+																							</xs:complexType>
+																						</xs:element>
+																						<xs:element name="greaterThan180DPD">
+																							<xs:complexType>
+																								<xs:sequence>
+																									<xs:element type="xs:string" name="count" />
+																									<xs:element type="xs:string" name="value" />
+																								</xs:sequence>
+																							</xs:complexType>
+																						</xs:element>
+																						<xs:element name="sub">
+																							<xs:complexType>
+																								<xs:sequence>
+																									<xs:element type="xs:string" name="count" />
+																									<xs:element type="xs:string" name="value" />
+																								</xs:sequence>
+																							</xs:complexType>
+																						</xs:element>
+																						<xs:element name="dbt">
+																							<xs:complexType>
+																								<xs:sequence>
+																									<xs:element type="xs:string" name="count" />
+																									<xs:element type="xs:string" name="value" />
+																								</xs:sequence>
+																							</xs:complexType>
+																						</xs:element>
+																						<xs:element name="loss">
+																							<xs:complexType>
+																								<xs:sequence>
+																									<xs:element type="xs:string" name="count" />
+																									<xs:element type="xs:string" name="value" />
+																								</xs:sequence>
+																							</xs:complexType>
+																						</xs:element>
+																					</xs:sequence>
+																				</xs:complexType>
+																			</xs:element>
+																			<xs:element name="total">
+																				<xs:complexType>
+																					<xs:sequence>
+																						<xs:element type="xs:string" name="count" />
+																						<xs:element type="xs:string" name="value" />
+																					</xs:sequence>
+																				</xs:complexType>
+																			</xs:element>
+																		</xs:sequence>
+																	</xs:complexType>
+																</xs:element>
+																<xs:element name="termLoan">
+																	<xs:complexType>
+																		<xs:sequence>
+																			<xs:element name="STDVec">
+																				<xs:complexType>
+																					<xs:sequence>
+																						<xs:element name="DPD0">
+																							<xs:complexType>
+																								<xs:sequence>
+																									<xs:element type="xs:string" name="count" />
+																									<xs:element type="xs:string" name="value" />
+																								</xs:sequence>
+																							</xs:complexType>
+																						</xs:element>
+																						<xs:element name="DPD1to30">
+																							<xs:complexType>
+																								<xs:sequence>
+																									<xs:element type="xs:string" name="count" />
+																									<xs:element type="xs:string" name="value" />
+																								</xs:sequence>
+																							</xs:complexType>
+																						</xs:element>
+																						<xs:element name="DPD31to60">
+																							<xs:complexType>
+																								<xs:sequence>
+																									<xs:element type="xs:string" name="count" />
+																									<xs:element type="xs:string" name="value" />
+																								</xs:sequence>
+																							</xs:complexType>
+																						</xs:element>
+																						<xs:element name="DPD61to90">
+																							<xs:complexType>
+																								<xs:sequence>
+																									<xs:element type="xs:string" name="count" />
+																									<xs:element type="xs:string" name="value" />
+																								</xs:sequence>
+																							</xs:complexType>
+																						</xs:element>
+																					</xs:sequence>
+																				</xs:complexType>
+																			</xs:element>
+																			<xs:element name="NONSTDVec">
+																				<xs:complexType>
+																					<xs:sequence>
+																						<xs:element name="DPD91to180">
+																							<xs:complexType>
+																								<xs:sequence>
+																									<xs:element type="xs:string" name="count" />
+																									<xs:element type="xs:string" name="value" />
+																								</xs:sequence>
+																							</xs:complexType>
+																						</xs:element>
+																						<xs:element name="greaterThan180DPD">
+																							<xs:complexType>
+																								<xs:sequence>
+																									<xs:element type="xs:string" name="count" />
+																									<xs:element type="xs:string" name="value" />
+																								</xs:sequence>
+																							</xs:complexType>
+																						</xs:element>
+																						<xs:element name="sub">
+																							<xs:complexType>
+																								<xs:sequence>
+																									<xs:element type="xs:string" name="count" />
+																									<xs:element type="xs:string" name="value" />
+																								</xs:sequence>
+																							</xs:complexType>
+																						</xs:element>
+																						<xs:element name="dbt">
+																							<xs:complexType>
+																								<xs:sequence>
+																									<xs:element type="xs:string" name="count" />
+																									<xs:element type="xs:string" name="value" />
+																								</xs:sequence>
+																							</xs:complexType>
+																						</xs:element>
+																						<xs:element name="loss">
+																							<xs:complexType>
+																								<xs:sequence>
+																									<xs:element type="xs:string" name="count" />
+																									<xs:element type="xs:string" name="value" />
+																								</xs:sequence>
+																							</xs:complexType>
+																						</xs:element>
+																					</xs:sequence>
+																				</xs:complexType>
+																			</xs:element>
+																			<xs:element name="total">
+																				<xs:complexType>
+																					<xs:sequence>
+																						<xs:element type="xs:string" name="count" />
+																						<xs:element type="xs:string" name="value" />
+																					</xs:sequence>
+																				</xs:complexType>
+																			</xs:element>
+																		</xs:sequence>
+																	</xs:complexType>
+																</xs:element>
+																<xs:element name="forex">
+																	<xs:complexType>
+																		<xs:sequence>
+																			<xs:element name="STDVec">
+																				<xs:complexType>
+																					<xs:sequence>
+																						<xs:element name="DPD0">
+																							<xs:complexType>
+																								<xs:sequence>
+																									<xs:element type="xs:string" name="count" />
+																									<xs:element type="xs:string" name="value" />
+																								</xs:sequence>
+																							</xs:complexType>
+																						</xs:element>
+																						<xs:element name="DPD1to30">
+																							<xs:complexType>
+																								<xs:sequence>
+																									<xs:element type="xs:string" name="count" />
+																									<xs:element type="xs:string" name="value" />
+																								</xs:sequence>
+																							</xs:complexType>
+																						</xs:element>
+																						<xs:element name="DPD31to60">
+																							<xs:complexType>
+																								<xs:sequence>
+																									<xs:element type="xs:string" name="count" />
+																									<xs:element type="xs:string" name="value" />
+																								</xs:sequence>
+																							</xs:complexType>
+																						</xs:element>
+																						<xs:element name="DPD61to90">
+																							<xs:complexType>
+																								<xs:sequence>
+																									<xs:element type="xs:string" name="count" />
+																									<xs:element type="xs:string" name="value" />
+																								</xs:sequence>
+																							</xs:complexType>
+																						</xs:element>
+																					</xs:sequence>
+																				</xs:complexType>
+																			</xs:element>
+																			<xs:element name="NONSTDVec">
+																				<xs:complexType>
+																					<xs:sequence>
+																						<xs:element name="DPD91to180">
+																							<xs:complexType>
+																								<xs:sequence>
+																									<xs:element type="xs:string" name="count" />
+																									<xs:element type="xs:string" name="value" />
+																								</xs:sequence>
+																							</xs:complexType>
+																						</xs:element>
+																						<xs:element name="greaterThan180DPD">
+																							<xs:complexType>
+																								<xs:sequence>
+																									<xs:element type="xs:string" name="count" />
+																									<xs:element type="xs:string" name="value" />
+																								</xs:sequence>
+																							</xs:complexType>
+																						</xs:element>
+																						<xs:element name="sub">
+																							<xs:complexType>
+																								<xs:sequence>
+																									<xs:element type="xs:string" name="count" />
+																									<xs:element type="xs:string" name="value" />
+																								</xs:sequence>
+																							</xs:complexType>
+																						</xs:element>
+																						<xs:element name="dbt">
+																							<xs:complexType>
+																								<xs:sequence>
+																									<xs:element type="xs:string" name="count" />
+																									<xs:element type="xs:string" name="value" />
+																								</xs:sequence>
+																							</xs:complexType>
+																						</xs:element>
+																						<xs:element name="loss">
+																							<xs:complexType>
+																								<xs:sequence>
+																									<xs:element type="xs:string" name="count" />
+																									<xs:element type="xs:string" name="value" />
+																								</xs:sequence>
+																							</xs:complexType>
+																						</xs:element>
+																					</xs:sequence>
+																				</xs:complexType>
+																			</xs:element>
+																			<xs:element name="total">
+																				<xs:complexType>
+																					<xs:sequence>
+																						<xs:element type="xs:string" name="count" />
+																						<xs:element type="xs:string" name="value" />
+																					</xs:sequence>
+																				</xs:complexType>
+																			</xs:element>
+																		</xs:sequence>
+																	</xs:complexType>
+																</xs:element>
+																<xs:element name="total">
+																	<xs:complexType>
+																		<xs:sequence>
+																			<xs:element name="STDVec">
+																				<xs:complexType>
+																					<xs:sequence>
+																						<xs:element name="DPD0">
+																							<xs:complexType>
+																								<xs:sequence>
+																									<xs:element type="xs:string" name="count" />
+																									<xs:element type="xs:string" name="value" />
+																								</xs:sequence>
+																							</xs:complexType>
+																						</xs:element>
+																						<xs:element name="DPD1to30">
+																							<xs:complexType>
+																								<xs:sequence>
+																									<xs:element type="xs:string" name="count" />
+																									<xs:element type="xs:string" name="value" />
+																								</xs:sequence>
+																							</xs:complexType>
+																						</xs:element>
+																						<xs:element name="DPD31to60">
+																							<xs:complexType>
+																								<xs:sequence>
+																									<xs:element type="xs:string" name="count" />
+																									<xs:element type="xs:string" name="value" />
+																								</xs:sequence>
+																							</xs:complexType>
+																						</xs:element>
+																						<xs:element name="DPD61to90">
+																							<xs:complexType>
+																								<xs:sequence>
+																									<xs:element type="xs:string" name="count" />
+																									<xs:element type="xs:string" name="value" />
+																								</xs:sequence>
+																							</xs:complexType>
+																						</xs:element>
+																					</xs:sequence>
+																				</xs:complexType>
+																			</xs:element>
+																			<xs:element name="NONSTDVec">
+																				<xs:complexType>
+																					<xs:sequence>
+																						<xs:element name="DPD91to180">
+																							<xs:complexType>
+																								<xs:sequence>
+																									<xs:element type="xs:string" name="count" />
+																									<xs:element type="xs:string" name="value" />
+																								</xs:sequence>
+																							</xs:complexType>
+																						</xs:element>
+																						<xs:element name="greaterThan180DPD">
+																							<xs:complexType>
+																								<xs:sequence>
+																									<xs:element type="xs:string" name="count" />
+																									<xs:element type="xs:string" name="value" />
+																								</xs:sequence>
+																							</xs:complexType>
+																						</xs:element>
+																						<xs:element name="sub">
+																							<xs:complexType>
+																								<xs:sequence>
+																									<xs:element type="xs:string" name="count" />
+																									<xs:element type="xs:string" name="value" />
+																								</xs:sequence>
+																							</xs:complexType>
+																						</xs:element>
+																						<xs:element name="dbt">
+																							<xs:complexType>
+																								<xs:sequence>
+																									<xs:element type="xs:string" name="count" />
+																									<xs:element type="xs:string" name="value" />
+																								</xs:sequence>
+																							</xs:complexType>
+																						</xs:element>
+																						<xs:element name="loss">
+																							<xs:complexType>
+																								<xs:sequence>
+																									<xs:element type="xs:string" name="count" />
+																									<xs:element type="xs:string" name="value" />
+																								</xs:sequence>
+																							</xs:complexType>
+																						</xs:element>
+																					</xs:sequence>
+																				</xs:complexType>
+																			</xs:element>
+																			<xs:element name="total">
+																				<xs:complexType>
+																					<xs:sequence>
+																						<xs:element type="xs:string" name="count" />
+																						<xs:element type="xs:string" name="value" />
+																					</xs:sequence>
+																				</xs:complexType>
+																			</xs:element>
+																		</xs:sequence>
+																	</xs:complexType>
+																</xs:element>
+															</xs:sequence>
+														</xs:complexType>
+													</xs:element>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+										<xs:element name="locationDetailsSec">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element type="xs:string" name="message" />
+													<xs:element name="locationInformationVec">
+														<xs:complexType>
+															<xs:sequence>
+																<xs:element name="locationInformation" maxOccurs="99999" minOccurs="0">
+																	<xs:complexType>
+																		<xs:sequence>
+																			<xs:element type="xs:string" name="borrowerOfficeLocationType" />
+																			<xs:element type="xs:string" name="address" />
+																			<xs:element type="xs:string" name="firstReportedDate" />
+																			<xs:element type="xs:string" name="lastReportedDate" />
+																			<xs:element type="xs:string" name="numberOfInstitutions" />
+																		</xs:sequence>
+																	</xs:complexType>
+																</xs:element>
+															</xs:sequence>
+														</xs:complexType>
+													</xs:element>
+													<xs:element type="xs:string" name="contactNumber" />
+													<xs:element type="xs:string" name="faxNumber" />
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+										<xs:element name="relationshipDetailsVec">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element type="xs:string" name="message" />
+													<xs:element name="relationshipDetails" maxOccurs="99999" minOccurs="0">
+														<xs:complexType>
+															<xs:sequence>
+																<xs:element type="xs:string" name="relationshipHeader" />
+																<xs:element name="relationshipInformation">
+																	<xs:complexType>
+																		<xs:sequence>
+																			<xs:element type="xs:string" name="name" />
+																			<xs:element type="xs:string" name="relatedType" />
+																			<xs:element type="xs:string" name="relationship" />
+																			<xs:element type="xs:string" name="percentageOfControl" />
+																			<xs:element type="xs:string" name="dateOfIncorporation" />
+																			<xs:element type="xs:string" name="dateOfBirth" />
+																			<xs:element type="xs:string" name="gender" />
+																			<xs:element type="xs:string" name="businessCategory" />
+																			<xs:element type="xs:string" name="businessIndustryType" />
+																			<xs:element type="xs:string" name="classOfActivity1" />
+																		</xs:sequence>
+																	</xs:complexType>
+																</xs:element>
+																<xs:element name="borrwerAddressContactDetails">
+																	<xs:complexType>
+																		<xs:sequence>
+																			<xs:element type="xs:string" name="address" />
+																			<xs:element type="xs:string" name="telephoneNumber" />
+																			<xs:element type="xs:string" name="faxNumber" />
+																			<xs:element type="xs:string" name="mobileNumber" />
+																		</xs:sequence>
+																	</xs:complexType>
+																</xs:element>
+																<xs:element name="borrwerIDDetailsVec">
+																	<xs:complexType>
+																		<xs:sequence>
+																			<xs:element type="xs:string" name="lastReportedDate" />
+																			<xs:element name="borrwerIDDetails" maxOccurs="99999" minOccurs="0">
+																				<xs:complexType>
+																					<xs:sequence>
+																						<xs:element type="xs:string" name="pan" />
+																						<xs:element type="xs:string" name="din" />
+																						<xs:element type="xs:string" name="voterID" />
+																						<xs:element type="xs:string" name="passportNumber" />
+																						<xs:element type="xs:string" name="drivingLicenseNo" />
+																						<xs:element type="xs:string" name="uid" />
+																						<xs:element type="xs:string" name="registrationNumber" />
+																						<xs:element type="xs:string" name="cin" />
+																						<xs:element type="xs:string" name="tin" />
+																						<xs:element type="xs:string" name="serviceTaxNumber" />
+																						<xs:element type="xs:string" name="rationCard" />
+																					</xs:sequence>
+																				</xs:complexType>
+																			</xs:element>
+																		</xs:sequence>
+																	</xs:complexType>
+																</xs:element>
+															</xs:sequence>
+														</xs:complexType>
+													</xs:element>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+										<xs:element name="creditFacilityDetailsasBorrowerSecVec">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element type="xs:string" name="message" />
+													<xs:element name="creditFacilityDetailsasBorrowerSec" maxOccurs="99999" minOccurs="0">
+														<xs:complexType>
+															<xs:sequence>
+																<xs:element type="xs:string" name="message" />
+																<xs:element name="creditFacilityCurrentDetailsVec">
+																	<xs:complexType>
+																		<xs:sequence>
+																			<xs:element name="creditFacilityCurrentDetails">
+																				<xs:complexType>
+																					<xs:sequence>
+																						<xs:element type="xs:string" name="derivative" />
+																						<xs:element type="xs:string" name="accountNumber" />
+																						<xs:element type="xs:string" name="cfSerialNumber" />
+																						<xs:element type="xs:string" name="cfType" />
+																						<xs:element type="xs:string" name="cfMember" />
+																						<xs:element type="xs:string" name="assetClassificationDaysPastDueDpd" />
+																						<xs:element type="xs:string" name="status" />
+																						<xs:element type="xs:string" name="statusDate" />
+																						<xs:element type="xs:string" name="lastReportedDate" />
+																						<xs:element name="amount">
+																							<xs:complexType>
+																								<xs:sequence>
+																									<xs:element type="xs:string" name="currency" />
+																									<xs:element type="xs:string" name="sanctionedAmt" />
+																									<xs:element type="xs:string" name="drawingPower" />
+																									<xs:element type="xs:string" name="outstandingBalance" />
+																									<xs:element type="xs:string" name="markToMarket" />
+																									<xs:element type="xs:string" name="overdue" />
+																									<xs:element type="xs:string" name="highCredit" />
+																									<xs:element type="xs:string" name="installmentAmt" />
+																									<xs:element type="xs:string" name="suitFiledAmt" />
+																									<xs:element type="xs:string" name="lastRepaid" />
+																									<xs:element type="xs:string" name="writtenOFF" />
+																									<xs:element type="xs:string" name="settled" />
+																									<xs:element type="xs:string" name="naorc" />
+																									<xs:element type="xs:string" name="contractsClassifiedAsNPA" />
+																									<xs:element type="xs:string" name="notionalAmountOfContracts" />
+																								</xs:sequence>
+																							</xs:complexType>
+																						</xs:element>
+																						<xs:element name="dates">
+																							<xs:complexType>
+																								<xs:sequence>
+																									<xs:element type="xs:string" name="sanctionedDt" />
+																									<xs:element type="xs:string" name="loanExpiryDt" />
+																									<xs:element type="xs:string" name="loanRenewalDt" />
+																									<xs:element type="xs:string" name="suitFiledDt" />
+																									<xs:element type="xs:string" name="wilfulDefault" />
+																								</xs:sequence>
+																							</xs:complexType>
+																						</xs:element>
+																						<xs:element name="otherDetails">
+																							<xs:complexType>
+																								<xs:sequence>
+																									<xs:element type="xs:string" name="repaymentFrequency" />
+																									<xs:element type="xs:string" name="tenure" />
+																									<xs:element type="xs:string" name="weightedAverageMaturityPeriodOfContracts" />
+																									<xs:element type="xs:string" name="restructingReason" />
+																									<xs:element type="xs:string" name="assetBasedSecurityCoverage" />
+																									<xs:element type="xs:string" name="GuaranteeCoverage" />
+																								</xs:sequence>
+																							</xs:complexType>
+																						</xs:element>
+																					</xs:sequence>
+																				</xs:complexType>
+																			</xs:element>
+																		</xs:sequence>
+																	</xs:complexType>
+																</xs:element>
+																<xs:element name="CFHistoryforACOrDPDupto24MonthsVec">
+																	<xs:complexType>
+																		<xs:sequence>
+																			<xs:element name="CFHistoryforACOrDPDupto24Months" maxOccurs="999" minOccurs="0">
+																				<xs:complexType>
+																					<xs:sequence>
+																						<xs:element type="xs:string" name="month" />
+																						<xs:element type="xs:string" name="ACorDPD" />
+																						<xs:element type="xs:string" name="OSAmount" />
+																					</xs:sequence>
+																				</xs:complexType>
+																			</xs:element>
+																		</xs:sequence>
+																	</xs:complexType>
+																</xs:element>
+																<xs:element name="creditFacilityOverdueDetailsVec">
+																	<xs:complexType>
+																		<xs:sequence>
+																			<xs:element type="xs:string" name="message" />
+																			<xs:element name="creditFacilityOverdueDetails">
+																				<xs:complexType>
+																					<xs:sequence>
+																						<xs:element type="xs:string" name="DPD1to30amt" />
+																						<xs:element type="xs:string" name="DPD31to60amt" />
+																						<xs:element type="xs:string" name="DPD61t090amt" />
+																						<xs:element type="xs:string" name="DPD91to180amt" />
+																						<xs:element type="xs:string" name="DPDabove180amt" />
+																					</xs:sequence>
+																				</xs:complexType>
+																			</xs:element>
+																		</xs:sequence>
+																	</xs:complexType>
+																</xs:element>
+																<xs:element name="chequeDishounouredDuetoInsufficientFunds">
+																	<xs:complexType>
+																		<xs:sequence>
+																			<xs:element type="xs:string" name="message" />
+																			<xs:element type="xs:string" name="CD3monthcount" />
+																			<xs:element type="xs:string" name="CD4to6monthcount" />
+																			<xs:element type="xs:string" name="CD7to9monthcount" />
+																			<xs:element type="xs:string" name="CD10to12monthcount" />
+																		</xs:sequence>
+																	</xs:complexType>
+																</xs:element>
+																<xs:element name="creditFacilitySecurityDetailsVec">
+																	<xs:complexType>
+																		<xs:sequence>
+																			<xs:element type="xs:string" name="message" />
+																			<xs:element name="creditFacilitySecurityDetails" maxOccurs="99999" minOccurs="0">
+																				<xs:complexType>
+																					<xs:sequence>
+																						<xs:element type="xs:string" name="relatedType" />
+																						<xs:element type="xs:string" name="classification" />
+																						<xs:element type="xs:string" name="value" />
+																						<xs:element type="xs:string" name="currency" />
+																						<xs:element type="xs:string" name="validationDt" />
+																						<xs:element type="xs:string" name="lastReportedDt" />
+																					</xs:sequence>
+																				</xs:complexType>
+																			</xs:element>
+																		</xs:sequence>
+																	</xs:complexType>
+																</xs:element>
+																<xs:element name="creditFacilityGuarantorDetailsVec">
+																	<xs:complexType>
+																		<xs:sequence>
+																			<xs:element type="xs:string" name="message" />
+																			<xs:element name="creditFacilityGuarantorDetails" maxOccurs="99999" minOccurs="0">
+																				<xs:complexType>
+																					<xs:sequence>
+																						<xs:element name="guarantorDetails">
+																							<xs:complexType>
+																								<xs:sequence>
+																									<xs:element type="xs:string" name="name" />
+																									<xs:element type="xs:string" name="relatedType" />
+																									<xs:element type="xs:string" name="dateOfBirth" />
+																									<xs:element type="xs:string" name="gender" />
+																									<xs:element type="xs:string" name="dateOfIncorporation" />
+																									<xs:element type="xs:string" name="businessCategory" />
+																									<xs:element type="xs:string" name="businessIndustryType" />
+																									<xs:element type="xs:string" name="message" />
+																								</xs:sequence>
+																							</xs:complexType>
+																						</xs:element>
+																						<xs:element name="guarantorAddressContactDetails">
+																							<xs:complexType>
+																								<xs:sequence>
+																									<xs:element type="xs:string" name="address" />
+																									<xs:element type="xs:string" name="telephoneNumber" />
+																									<xs:element type="xs:string" name="faxNumber" />
+																									<xs:element type="xs:string" name="mobileNumber" />
+																								</xs:sequence>
+																							</xs:complexType>
+																						</xs:element>
+																						<xs:element name="guarantorDetailsBorrwerIDDetailsVec">
+																							<xs:complexType>
+																								<xs:sequence>
+																									<xs:element type="xs:string" name="lastReportedDate" />
+																									<xs:element name="guarantorIDDetails" maxOccurs="99999" minOccurs="0">
+																										<xs:complexType>
+																											<xs:sequence>
+																												<xs:element type="xs:string" name="pan" />
+																												<xs:element type="xs:string" name="registrationNumber" />
+																												<xs:element type="xs:string" name="cin" />
+																												<xs:element type="xs:string" name="tin" />
+																												<xs:element type="xs:string" name="serviceTaxNumber" />
+																												<xs:element type="xs:string" name="din" />
+																												<xs:element type="xs:string" name="voterID" />
+																												<xs:element type="xs:string" name="passportNumber" />
+																												<xs:element type="xs:string" name="uid" />
+																												<xs:element type="xs:string" name="drivingLicenseNumber" />
+																												<xs:element type="xs:string" name="rationCard" />
+																												<xs:element type="xs:string" name="otherID" />
+																											</xs:sequence>
+																										</xs:complexType>
+																									</xs:element>
+																								</xs:sequence>
+																							</xs:complexType>
+																						</xs:element>
+																					</xs:sequence>
+																				</xs:complexType>
+																			</xs:element>
+																		</xs:sequence>
+																	</xs:complexType>
+																</xs:element>
+															</xs:sequence>
+														</xs:complexType>
+													</xs:element>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+										<xs:element name="creditFacilityDetailsasGuarantorVec">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element type="xs:string" name="message" />
+													<xs:element name="creditFacilityDetailsasGuarantor" maxOccurs="99999" minOccurs="0">
+														<xs:complexType>
+															<xs:sequence>
+																<xs:element name="creditFacilityCurrentDetails" maxOccurs="99999" minOccurs="0">
+																	<xs:complexType>
+																		<xs:sequence>
+																			<xs:element type="xs:string" name="derivative" />
+																			<xs:element type="xs:string" name="accountNumber" />
+																			<xs:element type="xs:string" name="cfSerialNumber" />
+																			<xs:element type="xs:string" name="cfType" />
+																			<xs:element type="xs:string" name="cfMember" />
+																			<xs:element type="xs:string" name="assetClassificationDaysPastDueDpd" />
+																			<xs:element type="xs:string" name="status" />
+																			<xs:element type="xs:string" name="statusDate" />
+																			<xs:element type="xs:string" name="lastReportedDate" />
+																			<xs:element name="amount">
+																				<xs:complexType>
+																					<xs:sequence>
+																						<xs:element type="xs:string" name="currency" />
+																						<xs:element type="xs:string" name="sanctionedAmt" />
+																						<xs:element type="xs:string" name="drawingPower" />
+																						<xs:element type="xs:string" name="outstandingBalance" />
+																						<xs:element type="xs:string" name="markToMarket" />
+																						<xs:element type="xs:string" name="overdue" />
+																						<xs:element type="xs:string" name="highCredit" />
+																						<xs:element type="xs:string" name="installmentAmt" />
+																						<xs:element type="xs:string" name="suitFiledAmt" />
+																						<xs:element type="xs:string" name="lastRepaid" />
+																						<xs:element type="xs:string" name="writtenOFF" />
+																						<xs:element type="xs:string" name="settled" />
+																						<xs:element type="xs:string" name="naorc" />
+																						<xs:element type="xs:string" name="contractsClassifiedAsNPA" />
+																						<xs:element type="xs:string" name="notionalAmountOfContracts" />
+																					</xs:sequence>
+																				</xs:complexType>
+																			</xs:element>
+																			<xs:element name="dates">
+																				<xs:complexType>
+																					<xs:sequence>
+																						<xs:element type="xs:string" name="sanctionedDt" />
+																						<xs:element type="xs:string" name="loanExpiryDt" />
+																						<xs:element type="xs:string" name="loanRenewalDt" />
+																						<xs:element type="xs:string" name="suitFiledDt" />
+																						<xs:element type="xs:string" name="wilfulDefault" />
+																					</xs:sequence>
+																				</xs:complexType>
+																			</xs:element>
+																			<xs:element name="otherDetails">
+																				<xs:complexType>
+																					<xs:sequence>
+																						<xs:element type="xs:string" name="repaymentFrequency" />
+																						<xs:element type="xs:string" name="tenure" />
+																						<xs:element type="xs:string" name="weightedAverageMaturityPeriodOfContracts" />
+																						<xs:element type="xs:string" name="restructingReason" />
+																						<xs:element type="xs:string" name="assetBasedSecurityCoverage" />
+																						<xs:element type="xs:string" name="GuaranteeCoverage" />
+																					</xs:sequence>
+																				</xs:complexType>
+																			</xs:element>
+																		</xs:sequence>
+																	</xs:complexType>
+																</xs:element>
+																<xs:element name="borrwerInfo">
+																	<xs:complexType>
+																		<xs:sequence>
+																			<xs:element name="borrwerDetails">
+																				<xs:complexType>
+																					<xs:sequence>
+																						<xs:element type="xs:string" name="name" />
+																						<xs:element type="xs:string" name="borrowersLegalConstitution" />
+																						<xs:element name="classOfActivityVec">
+																							<xs:complexType>
+																								<xs:sequence>
+																									<xs:element type="xs:string" name="classOfActivity" maxOccurs="3" minOccurs="0" />
+																								</xs:sequence>
+																							</xs:complexType>
+																						</xs:element>
+																						<xs:element type="xs:string" name="businessCategory" />
+																						<xs:element type="xs:string" name="businessIndustryType" />
+																						<xs:element type="xs:string" name="salesFigure" />
+																						<xs:element type="xs:string" name="numberOfEmployees" />
+																						<xs:element type="xs:string" name="dateOfIncorporation" />
+																						<xs:element type="xs:string" name="year" />
+																					</xs:sequence>
+																				</xs:complexType>
+																			</xs:element>
+																			<xs:element name="borrwerAddressContactDetailsVec">
+																				<xs:complexType>
+																					<xs:sequence>
+																						<xs:element name="borrwerAddressContactDetails" maxOccurs="99999" minOccurs="0">
+																							<xs:complexType>
+																								<xs:sequence>
+																									<xs:element type="xs:string" name="address" />
+																									<xs:element type="xs:string" name="telephoneNumber" />
+																									<xs:element type="xs:string" name="faxNumber" />
+																									<xs:element type="xs:string" name="mobileNumber" />
+																								</xs:sequence>
+																							</xs:complexType>
+																						</xs:element>
+																					</xs:sequence>
+																				</xs:complexType>
+																			</xs:element>
+																			<xs:element name="borrwerIDDetailsVec">
+																				<xs:complexType>
+																					<xs:sequence>
+																						<xs:element type="xs:string" name="lastReportedDate" />
+																						<xs:element name="borrwerIDDetails" maxOccurs="99999" minOccurs="0">
+																							<xs:complexType>
+																								<xs:sequence>
+																									<xs:element type="xs:string" name="cin" />
+																									<xs:element type="xs:string" name="pan" />
+																									<xs:element type="xs:string" name="tin" />
+																									<xs:element type="xs:string" name="registrationNumber" />
+																									<xs:element type="xs:string" name="serviceTaxNumber" />
+																								</xs:sequence>
+																							</xs:complexType>
+																						</xs:element>
+																					</xs:sequence>
+																				</xs:complexType>
+																			</xs:element>
+																		</xs:sequence>
+																	</xs:complexType>
+																</xs:element>
+															</xs:sequence>
+														</xs:complexType>
+													</xs:element>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+										<xs:element name="suitFiledVec">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element type="xs:string" name="message" />
+													<xs:element name="suitFilled" maxOccurs="99999" minOccurs="0">
+														<xs:complexType>
+															<xs:sequence>
+																<xs:element type="xs:string" name="suitFilledBy" />
+																<xs:element type="xs:string" name="suitStatus" />
+																<xs:element type="xs:string" name="suitRefNumber" />
+																<xs:element type="xs:string" name="suitAmt" />
+																<xs:element type="xs:string" name="dateSuit" />
+															</xs:sequence>
+														</xs:complexType>
+													</xs:element>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+										<xs:element name="creditRatingSummaryVec">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element type="xs:string" name="message" />
+													<xs:element name="creditRatingSummary" maxOccurs="999" minOccurs="0">
+														<xs:complexType>
+															<xs:sequence>
+																<xs:element type="xs:string" name="creditRatingAgency" />
+																<xs:element name="creditRatingSummaryDetailsVec" maxOccurs="999" minOccurs="0">
+																	<xs:complexType>
+																		<xs:sequence>
+																			<xs:element type="xs:string" name="creditRating" />
+																			<xs:element type="xs:string" name="ratingAsOn" />
+																			<xs:element type="xs:string" name="ratingExpiryDt" />
+																			<xs:element type="xs:string" name="lastReportedDt" />
+																		</xs:sequence>
+																	</xs:complexType>
+																</xs:element>
+															</xs:sequence>
+														</xs:complexType>
+													</xs:element>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+										<xs:element name="enquiryDetailsInLast24MonthVec">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element type="xs:string" name="message" />
+													<xs:element name="enquiryDetailsInLast24Month" maxOccurs="99999" minOccurs="0">
+														<xs:complexType>
+															<xs:sequence>
+																<xs:element type="xs:string" name="creditLender" />
+																<xs:element type="xs:string" name="enquiryDt" />
+																<xs:element type="xs:string" name="enquiryPurpose" />
+																<xs:element type="xs:string" name="enquiryAmt" />
+															</xs:sequence>
+														</xs:complexType>
+													</xs:element>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+										<xs:element name="creditFacilitiesDetailsVec">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element type="xs:string" name="message" />
+													<xs:element name="creditFacilitiesDetails" maxOccurs="99999" minOccurs="0">
+														<xs:complexType>
+															<xs:sequence>
+																<xs:element type="xs:string" name="creditType" />
+																<xs:element type="xs:string" name="group" />
+																<xs:element type="xs:string" name="ownership" />
+																<xs:element type="xs:string" name="accountNo" />
+																<xs:element type="xs:string" name="reportedBy" />
+																<xs:element type="xs:string" name="currentBalance" />
+																<xs:element type="xs:string" name="closedDate" />
+																<xs:element type="xs:string" name="lastReported" />
+															</xs:sequence>
+														</xs:complexType>
+													</xs:element>
+													<xs:element type="xs:string" name="total" />
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+										<xs:element name="creditFacilitiesSummary">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="countOfCreditFacilities">
+														<xs:complexType>
+															<xs:sequence>
+																<xs:element name="noOfCreditFacilities">
+																	<xs:complexType>
+																		<xs:sequence>
+																			<xs:element type="xs:string" name="yourBank" />
+																			<xs:element type="xs:string" name="others" />
+																			<xs:element type="xs:string" name="total" />
+																		</xs:sequence>
+																	</xs:complexType>
+																</xs:element>
+																<xs:element name="noOfCreditGrantors">
+																	<xs:complexType>
+																		<xs:sequence>
+																			<xs:element type="xs:string" name="yourBank" />
+																			<xs:element type="xs:string" name="others" />
+																			<xs:element type="xs:string" name="total" />
+																		</xs:sequence>
+																	</xs:complexType>
+																</xs:element>
+															</xs:sequence>
+														</xs:complexType>
+													</xs:element>
+													<xs:element name="summaryOfCreditFacilitiesVec">
+														<xs:complexType>
+															<xs:sequence>
+																<xs:element name="summaryOfCreditFacilitiesRec" maxOccurs="99999" minOccurs="0">
+																	<xs:complexType>
+																		<xs:sequence>
+																			<xs:element type="xs:string" name="creditType" />
+																			<xs:element type="xs:string" name="yourBank" />
+																			<xs:element type="xs:string" name="othersBank" />
+																		</xs:sequence>
+																	</xs:complexType>
+																</xs:element>
+															</xs:sequence>
+														</xs:complexType>
+													</xs:element>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

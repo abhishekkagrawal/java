@@ -1,12 +1,8 @@
-/md5-hashing/target/
-/md5-hashing/.settings
-/md5-hashing/.classpath
 /md5-hashing/.project
-/SimpleMD5Encrypt/target/
-/SimpleMD5Encrypt/.settings
-/SimpleMD5Encrypt/.classpath
 /SimpleMD5Encrypt/.project
 /rsa-util/target/
-/rsa-util/.settings
-/rsa-util/.classpath
 /rsa-util/.project
+**/target
+**/.settings
+**/.classpath
+*.class

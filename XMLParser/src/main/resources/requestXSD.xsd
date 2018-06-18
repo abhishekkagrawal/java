@@ -1,0 +1,128 @@
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="request">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="header">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element type="xs:string" name="version"/>
+              <xs:element type="xs:string" name="product_type"/>
+              <xs:element type="xs:string" name="user_id"/>
+              <xs:element type="xs:string" name="user_password"/>
+              <xs:element type="xs:string" name="member_code"/>
+              <xs:element type="xs:string" name="member_KOB"/>
+              <xs:element type="xs:string" name="member_reference_number"/>
+              <xs:element type="xs:string" name="report_type"/>
+              <xs:element type="xs:string" name="output_format"/>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="search_data">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="general_fields">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element type="xs:string" name="enquiry_amount"/>
+                    <xs:element type="xs:string" name="enquiry_purpose"/>
+                    <xs:element type="xs:string" name="enquiry_type"/>
+                    <xs:element type="xs:string" name="type_of_entity"/>
+                    <xs:element type="xs:string" name="class_of_activity"/>
+                    <xs:element type="xs:string" name="date_of_registration"/>
+                    <xs:element type="xs:string" name="cmr_flag"/>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="company_name">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element type="xs:string" name="name"/>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="id">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element type="xs:string" name="pan"/>
+                    <xs:element type="xs:string" name="cin"/>
+                    <xs:element type="xs:string" name="crn"/>
+                    <xs:element type="xs:string" name="tin"/>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="contact">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="address" maxOccurs="3" minOccurs="1">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element type="xs:string" name="addressType"/>
+                          <xs:element type="xs:string" name="addressLine1"/>
+                          <xs:element type="xs:string" name="city"/>
+                          <xs:element type="xs:string" name="state"/>
+                          <xs:element type="xs:string" name="pinCode"/>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="telephone" maxOccurs="3" minOccurs="0">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element type="xs:string" name="telephoneType"/>
+                          <xs:element type="xs:string" name="telephone_num"/>
+                          <xs:element type="xs:string" name="contact_area"/>
+                          <xs:element type="xs:string" name="contact_prefix"/>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="directors">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="director" maxOccurs="3" minOccurs="0">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element type="xs:string" name="name"/>
+                          <xs:element type="xs:string" name="relation_type"/>
+                          <xs:element type="xs:string" name="dob"/>
+                          <xs:element type="xs:string" name="gender"/>
+                          <xs:element type="xs:string" name="pan"/>
+                          <xs:element type="xs:string" name="uid"/>
+                          <xs:element type="xs:string" name="voter_id"/>
+                          <xs:element type="xs:string" name="passport_num"/>
+                          <xs:element type="xs:string" name="driving_licence_id"/>
+                          <xs:element name="address">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element type="xs:string" name="addressType"/>
+                                <xs:element type="xs:string" name="addressLine1"/>
+                                <xs:element type="xs:string" name="city"/>
+                                <xs:element type="xs:string" name="state"/>
+                                <xs:element type="xs:string" name="pinCode"/>
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element name="telephone" maxOccurs="3" minOccurs="0">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element type="xs:string" name="telephoneType"/>
+                                <xs:element type="xs:string" name="telephone_num"/>
+                                <xs:element type="xs:string" name="contact_area"/>
+                                <xs:element type="xs:string" name="contact_prefix"/>
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
