@@ -1,0 +1,69 @@
+<ivy-module version="2.0">
+    <info organisation="Webaccess" module="IvyTest"/>
+    <configurations defaultconfmapping="compile->default">
+        <conf name="compile" description="Required to compile application"/>
+        <conf name="runtime" description="Additional run-time dependencies" extends="compile"/>
+    </configurations>
+    <dependencies>
+
+        <!--Commons Libray-->
+        <dependency org="commons-codec" name="commons-codec" rev="1.9"/>
+        <dependency org="commons-configuration" name="commons-configuration" rev="1.10"/>
+        <dependency org="commons-logging" name="commons-logging" rev="1.1.3" />
+        <dependency org="commons-fileupload" name="commons-fileupload" rev="1.3.2"/>
+        <dependency org="commons-io" name="commons-io" rev="2.4"/>
+        <dependency org="commons-lang" name="commons-lang" rev="2.6"/>
+        <dependency org="org.apache.commons" name="commons-lang3" rev="3.3.1"/>
+
+        <!--Service Client-->
+        
+        <dependency org="org.apache.httpcomponents" name="httpclient" rev="4.3.3" />
+        <dependency org="org.apache.httpcomponents" name="httpclient-cache" rev="4.3.3" />
+        <dependency org="org.apache.httpcomponents" name="httpcore" rev="4.3.2" />
+        <dependency org="org.apache.httpcomponents" name="httpmime" rev="4.3.3" />
+        <dependency org="dom4j" name="dom4j" rev="1.3"/>
+        <dependency org="org.apache.httpcomponents" name="fluent-hc" rev="4.3.3" />
+        <dependency org="org.bouncycastle" name="bcprov-jdk15on" rev="1.50"/>
+
+        <!--Database-->
+        <dependency org="net.sourceforge.jtds" name="jtds" rev="1.3.1"/>
+        <dependency org="commons-dbutils" name="commons-dbutils" rev="1.5"/>
+
+        
+        <!--Jackson-->
+        <dependency org="com.fasterxml.jackson.core" name="jackson-annotations" rev="2.3.2" />
+        <dependency org="com.fasterxml.jackson.core" name="jackson-core" rev="2.3.2" />
+        <dependency org="com.fasterxml.jackson.core" name="jackson-databind" rev="2.3.2" />
+
+        <!--Logging-->
+        <dependency org="net.kencochrane.raven" name="raven" rev="4.1.2"/>
+        <dependency org="net.kencochrane.raven" name="raven-log4j" rev="4.1.2"/>
+        <dependency org="org.slf4j" name="slf4j-api" rev="1.7.6"/>
+        <dependency org="log4j" name="log4j" rev="1.2.17"/>
+        <dependency org="com.google.guava" name="guava" rev="15.0"/>
+        <dependency org="uk.org.simonsite" name="log4j-rolling-appender" rev="20131024-2017" />
+        <!--Java Melody-->
+        <dependency org="net.bull.javamelody" name="javamelody-core" rev="1.50.0"/>
+        <dependency org="org.jrobin" name="jrobin" rev="1.5.9"/>
+
+        <!--Struts 2 Library-->
+        <dependency org="asm" name="asm" rev="3.3.1" />
+        <dependency org="asm" name="asm-commons" rev="3.3.1" />
+        <dependency org="asm" name="asm-tree" rev="3.3.1" />
+        <dependency org="org.apache.struts" name="struts2-convention-plugin" rev="2.3.34" />
+        <dependency org="org.apache.struts" name="struts2-core" rev="2.3.34" />
+        <dependency org="org.apache.struts" name="struts2-dojo-plugin" rev="2.3.34" />
+        <dependency org="com.jgeppert.struts2.jquery" name="struts2-jquery-plugin" rev="3.7.0"/>
+        <dependency org="org.apache.struts" name="struts2-json-plugin" rev="2.3.34" />
+        <dependency org="org.apache.struts.xwork" name="xwork-core" rev="2.3.34"/>
+        <dependency org="org.apache.tomcat" name="tomcat-jdbc" rev="8.0.5"/>
+        <dependency org="com.google.collections" name="google-collections" rev="1.0-rc2"/>
+        <dependency org="javassist" name="javassist" rev="3.12.1.GA" />
+        <dependency org="ognl" name="ognl" rev="3.0.21"/>
+        <dependency org="org.freemarker" name="freemarker" rev="2.3.22" />
+
+        <!--YUI Compressor - JS & CSS-->
+        <dependency org="com.yahoo.platform.yui" name="yuicompressor" rev="2.4.7"/>
+        <dependency org="com.yahoo.platform.yui" name="yuiant" rev="1.0"/>
+    </dependencies>
+</ivy-module>
